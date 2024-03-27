@@ -13,12 +13,12 @@ class Rectangle(Shape):
         return 2 * (self.length + self.width)
 
     def __str__(self):
-        return f"Rectangle with length {self.length:.2f} and width {self.width:.2f}"
+        return f"Rectangle with length {self.length} and width {self.width}, Area: {self.get_area()}, perimeter:{self.get_perimeter()}"
 
     @classmethod
     def get_area_formula(cls):
-        return "length × width"
+        return "length * width"
 
     @classmethod
     def get_perimeter_formula(cls):
-        return "2 × (length + width)"
+        return "2 * (length + width)"

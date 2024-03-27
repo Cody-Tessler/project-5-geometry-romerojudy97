@@ -3,7 +3,9 @@ import math
 
 class Circle(Shape):
     def __init__(self, r):
-        self.r = r
+        if r < 0:
+            raise ValueError("Circle radius can't be negative")
+        self.radius = r
 
     def get_area(self):
         return math.pi * self.r ** 2

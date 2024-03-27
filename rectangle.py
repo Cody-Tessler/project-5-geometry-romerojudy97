@@ -1,8 +1,10 @@
 from shape import Shape
-import math
+
 class Rectangle(Shape):
 
     def __init__(self, length, width):
+        if length < 0 or width < 0:
+            raise ValueError("Length and width must be non-negative")
         self.length = length
         self.width = width
 
@@ -13,7 +15,9 @@ class Rectangle(Shape):
         return 2 * (self.length + self.width)
 
     def __str__(self):
-        return f"Rectangle with length {self.length} and width {self.width}, Area: {self.get_area()}, perimeter:{self.get_perimeter()}"
+        area = self.get_area()
+        perimeter = self.get_perimeter()
+        return f"Rectangle with length {self.length} and width {self.width}, Area: {area}, Perimeter: {perimeter}"
 
     @classmethod
     def get_area_formula(cls):

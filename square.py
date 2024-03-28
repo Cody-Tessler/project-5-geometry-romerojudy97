@@ -9,14 +9,12 @@ from rectangle import Rectangle
 
 class Square(Rectangle):
     def __init__(self, a):
-        self.length = a
-        self.width = a
         if a < 0:
             raise ValueError("Side length must be non-negative")
-        # super().__init__(a, a)  # Initialize length and width using the parent class constructor
+        super().__init__(a, a)  # Initialize both length and width with the same side length 'a'
 
     def __str__(self):
-        return f"Square with side length {self.length:.2f}"
+        return f"Square with side length {self.a}"
 
     @classmethod
     def get_area_formula(cls):

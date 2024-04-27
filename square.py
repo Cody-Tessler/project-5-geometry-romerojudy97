@@ -8,17 +8,18 @@ Those methods should be inherited from the parent class.
 from rectangle import Rectangle
 
 class Square(Rectangle):
-
     def __init__(self, a):
-        ...
+        if a < 0:
+            raise ValueError("Side length must be non-negative")
+        super().__init__(a, a)  # Initialize both length and width with the same side length 'a'
 
     def __str__(self):
-        return "TODO"
+        return f"Square with side length {self.a}"
 
     @classmethod
     def get_area_formula(cls):
-        return "TODO"
+        return "side length * side length"
 
     @classmethod
     def get_perimeter_formula(cls):
-        return "TODO"
+        return "4 * side length"
